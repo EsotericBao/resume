@@ -1,0 +1,66 @@
+\documentclass[10pt, a4paper]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=0.6in]{geometry} 
+\usepackage{enumitem}               
+\usepackage{titlesec}            
+\usepackage{xcolor}   
+\usepackage[hidelinks]{hyperref}
+\definecolor{linkblue}{HTML}{1A4D8F}
+\hypersetup{colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue}
+\usepackage[normalem]{ulem}         % For underlines
+\usepackage{mathptmx}               % Times New Roman
+
+% --- Personal Information Variables ---
+\newcommand{\userName}{Jeremy Choo}
+\newcommand{\userPhone}{8866 1242}
+\newcommand{\userEmail}{jeremy.jh.choo@gmail.com}
+
+% --- Section Styling ---
+\titleformat{\section}{\bfseries\large\uppercase}{}{0pt}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+% --- Custom Commands ---
+\newlist{resumeItemize}{itemize}{1}
+\setlist[resumeItemize]{label=\raisebox{0.25ex}{\tiny$\bullet$}, leftmargin=0.15in, nosep}
+% New sub-item list for nested bullets
+\newlist{resumeSubItemize}{itemize}{1}
+\setlist[resumeSubItemize]{label=\raisebox{0.15ex}{\tiny$\circ$}, leftmargin=0.2in, nosep}
+
+\newcommand{\resumeHeading}[3]{
+  \vspace{8pt}
+  \noindent\textbf{#1} \hfill #2 \\ [4pt]
+  \noindent\textbf{#3} \vspace{2pt}
+}
+
+\begin{document}
+
+% --- Centred Header ---
+\begin{center}
+    \LARGE{\textbf{\userName}}\\
+    \large{Mobile Number: \userPhone~$|$~Email: \href{mailto:\userEmail}{\userEmail}}
+\end{center}
+
+\vspace{-6pt}
+\rule{\textwidth}{0.5pt}
+
+% --- Summary ---
+% Mechanical Engineering student at Nanyang Technological University with expertise in robotics, AI-driven software, and hardware integration.
+% Strong experience in AI development, motion control, and embedded systems. Passionate about automation and innovative engineering solu-
+% tions with a proven track record in leading projects and mentoring teams.
+
+
+% --- Importing Sections ---
+\input{sections/Education}
+\input{sections/Experience}
+\newpage{}
+\input{sections/Project}
+\input{sections/Accomplishments}
+\input{sections/CCA}
+\input{sections/Skills}
+\input{sections/Links}
+% \input{sections/Hobby}
+
+\end{document}
